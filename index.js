@@ -5,8 +5,25 @@ const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/planetas/nombres', (req, res) => {
+
+    const nombres = [
+        'García',
+        'Martínez',
+        'López',
+        'Hernández',
+        'Ramírez'
+    ];
+
+    const planetas = [
+        'Marte',
+        'Júpiter'
+    ];
+
+    res.render('index', {
+        nombres,
+        planetas
+    });
 });
 
 app.listen(PORT, () => {
